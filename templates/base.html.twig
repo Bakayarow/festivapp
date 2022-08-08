@@ -8,10 +8,44 @@
         {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
     </head>
     <body>
-        <div class="container mt-4">
+
+    
+    <div class="container mt-4">
+        
+
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li>
+                <a class="nav-link px-2 link-secondary" href="{{ path('app_post_index') }}">Accueil</a>
+            </li>
+            <li>
+                <a class="nav-link px-2 link-secondary" href="#">Mes publications</a>
+            </li>
+       </ul>
+
+      <div class="col-md-3 text-end">
+        <ul class="nav nav-pills align-items-center justify-content-end">
+
+
+            <li class="nav-item px-2">
+                <a href="{{ path('app_login') }}" class="btn btn-outline-dark">
+                    <span class="menu-label">Se connecter</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ path('app_register') }}" class="btn btn-dark">
+                    <span class="menu-label">S'inscrire</span>
+                </a>
+            </li>
+
+        </ul>
+      </div>
+
+    </header>
+
             {% block body %}{% endblock %}
             {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
-        </div>
     </body>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

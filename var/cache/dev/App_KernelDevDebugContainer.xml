@@ -4930,6 +4930,13 @@
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.vCnrsYt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
+        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.PK5KVtZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4943,11 +4950,12 @@
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.QFLNMb5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dbbjmJE" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
         <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Xf_chUG" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -4956,10 +4964,11 @@
         <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4WI1Dtz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OH36RVd" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="post" type="service_closure" id=".errored..service_locator.4WI1Dtz.App\Entity\Post"/>
+        <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
+        <argument key="post" type="service_closure" id=".errored..service_locator.OH36RVd.App\Entity\Post"/>
       </argument>
     </service>
     <service id=".service_locator.JQ.Ubn6" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5001,19 +5010,19 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.vXWFGex" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Au1qWVD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CommentController::delete" type="service_closure" id=".service_locator.KBkob.L"/>
         <argument key="App\Controller\CommentController::edit" type="service_closure" id=".service_locator.KBkob.L"/>
         <argument key="App\Controller\CommentController::index" type="service_closure" id=".service_locator.VXcOMBY"/>
-        <argument key="App\Controller\CommentController::new" type="service_closure" id=".service_locator.QFLNMb5"/>
+        <argument key="App\Controller\CommentController::new" type="service_closure" id=".service_locator.vCnrsYt"/>
         <argument key="App\Controller\CommentController::show" type="service_closure" id=".service_locator.PK5KVtZ"/>
         <argument key="App\Controller\PostController::delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
-        <argument key="App\Controller\PostController::index" type="service_closure" id=".service_locator.QFLNMb5"/>
+        <argument key="App\Controller\PostController::index" type="service_closure" id=".service_locator.dbbjmJE"/>
         <argument key="App\Controller\PostController::new" type="service_closure" id=".service_locator.Xf_chUG"/>
-        <argument key="App\Controller\PostController::show" type="service_closure" id=".service_locator.4WI1Dtz"/>
+        <argument key="App\Controller\PostController::show" type="service_closure" id=".service_locator.OH36RVd"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.9uW928t"/>
@@ -5030,13 +5039,13 @@
         <argument key="App\Controller\CommentController:delete" type="service_closure" id=".service_locator.KBkob.L"/>
         <argument key="App\Controller\CommentController:edit" type="service_closure" id=".service_locator.KBkob.L"/>
         <argument key="App\Controller\CommentController:index" type="service_closure" id=".service_locator.VXcOMBY"/>
-        <argument key="App\Controller\CommentController:new" type="service_closure" id=".service_locator.QFLNMb5"/>
+        <argument key="App\Controller\CommentController:new" type="service_closure" id=".service_locator.vCnrsYt"/>
         <argument key="App\Controller\CommentController:show" type="service_closure" id=".service_locator.PK5KVtZ"/>
         <argument key="App\Controller\PostController:delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
-        <argument key="App\Controller\PostController:index" type="service_closure" id=".service_locator.QFLNMb5"/>
+        <argument key="App\Controller\PostController:index" type="service_closure" id=".service_locator.dbbjmJE"/>
         <argument key="App\Controller\PostController:new" type="service_closure" id=".service_locator.Xf_chUG"/>
-        <argument key="App\Controller\PostController:show" type="service_closure" id=".service_locator.4WI1Dtz"/>
+        <argument key="App\Controller\PostController:show" type="service_closure" id=".service_locator.OH36RVd"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.YU8H6ve"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.9uW928t"/>
@@ -5382,12 +5391,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.vXWFGex"/>
+      <argument type="service" id=".service_locator.Au1qWVD"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.vXWFGex"/>
+      <argument type="service" id=".service_locator.Au1qWVD"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5403,7 +5412,7 @@
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.PK5KVtZ.App\Entity\Comment" class="App\Entity\Comment"/>
     <service id=".errored..service_locator.KBkob.L.App\Entity\Comment" class="App\Entity\Comment"/>
-    <service id=".errored..service_locator.4WI1Dtz.App\Entity\Post" class="App\Entity\Post"/>
+    <service id=".errored..service_locator.OH36RVd.App\Entity\Post" class="App\Entity\Post"/>
     <service id=".errored..service_locator.JQ.Ubn6.App\Entity\Post" class="App\Entity\Post"/>
     <service id=".errored..service_locator.4T4EJFR.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.9uW928t.App\Entity\User" class="App\Entity\User"/>
@@ -6177,15 +6186,16 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vXWFGex"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Au1qWVD"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~fKUvqs0"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.vCnrsYt" alias=".service_locator.QFLNMb5"/>
+    <service id=".service_locator.wYvy8zf" alias=".service_locator.dbbjmJE"/>
+    <service id=".service_locator.1mLEFLP" alias=".service_locator.OH36RVd"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.hCMun5R" alias=".service_locator.vXWFGex"/>
+    <service id=".service_locator.5DLHKKp" alias=".service_locator.Au1qWVD"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.ZgJENF1" alias=".service_locator.FG.89FU"/>
     <service id=".service_locator.Uukl3tw" alias=".service_locator.jBidh55"/>
@@ -6212,11 +6222,12 @@
     <service id=".service_locator.FatRZu2" alias=".service_locator.bRdave9"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.bTOCc1J" alias=".service_locator.VXcOMBY"/>
+    <service id=".service_locator.6XvKX4J" alias=".service_locator.vCnrsYt"/>
     <service id=".service_locator.SHgVz3H" alias=".service_locator.PK5KVtZ"/>
     <service id=".service_locator.bYmWu3J" alias=".service_locator.KBkob.L"/>
-    <service id=".service_locator.6XvKX4J" alias=".service_locator.QFLNMb5"/>
+    <service id=".service_locator.XIlM3eq" alias=".service_locator.dbbjmJE"/>
     <service id=".service_locator.AtDfmcq" alias=".service_locator.Xf_chUG"/>
-    <service id=".service_locator.ciPaLol" alias=".service_locator.4WI1Dtz"/>
+    <service id=".service_locator.fvLusW8" alias=".service_locator.OH36RVd"/>
     <service id=".service_locator.m6FqfrM" alias=".service_locator.JQ.Ubn6"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
     <service id=".service_locator.URfgn8g" alias=".service_locator.zFcJjKU"/>

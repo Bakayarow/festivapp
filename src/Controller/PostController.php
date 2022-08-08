@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CommentRepository;
+use App\Repository\UserRepository;
 use App\Entity\Comment;
 use App\Form\CommentType;
 
@@ -17,7 +18,7 @@ use App\Form\CommentType;
 class PostController extends AbstractController
 {
     #[Route('/', name: 'app_post_index', methods: ['GET'])]
-    public function index(PostRepository $postRepository, CommentRepository $commentRepository, Request $request): Response
+    public function index(PostRepository $postRepository, CommentRepository $commentRepository, UserRepository $userRepository, Request $request): Response
     { 
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
@@ -30,6 +31,7 @@ class PostController extends AbstractController
             'posts' => $postRepository->findAll(),
             'comments' => $commentRepository->findAll(),
             'formComment' => $form->createView(),
+            'users' => $userRepository->findAll(),
         ]);
     }
 
@@ -54,10 +56,11 @@ class PostController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_post_show', methods: ['GET'])]
-    public function show(Post $post): Response
+    public function show(Post $post, CommentRepository $commentRepository): Response
     {
         return $this->render('post/show.html.twig', [
             'post' => $post,
+            'comments' => $commentRepository->findAll(),
         ]);
     }
 

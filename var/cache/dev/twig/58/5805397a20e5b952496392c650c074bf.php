@@ -60,16 +60,59 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         // line 9
         echo "    </head>
     <body>
-        <div class=\"container mt-4\">
+
+    
+    <div class=\"container mt-4\">
+        
+
+        <header class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom\">
+       <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+            <li>
+                <a class=\"nav-link px-2 link-secondary\" href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
+        echo "\">Accueil</a>
+            </li>
+            <li>
+                <a class=\"nav-link px-2 link-secondary\" href=\"#\">Mes publications</a>
+            </li>
+       </ul>
+
+      <div class=\"col-md-3 text-end\">
+        <ul class=\"nav nav-pills align-items-center justify-content-end\">
+
+
+            <li class=\"nav-item px-2\">
+                <a href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" class=\"btn btn-outline-dark\">
+                    <span class=\"menu-label\">Se connecter</span>
+                </a>
+            </li>
+
+            <li class=\"nav-item\">
+                <a href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\" class=\"btn btn-dark\">
+                    <span class=\"menu-label\">S'inscrire</span>
+                </a>
+            </li>
+
+        </ul>
+      </div>
+
+    </header>
+
             ";
-        // line 12
+        // line 47
         $this->displayBlock('body', $context, $blocks);
-        // line 13
+        // line 48
         echo "            ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 14
-        echo "        </div>
-    </body>
+        // line 49
+        echo "    </body>
     <!-- JavaScript Bundle with Popper -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\"></script>
 </html>";
@@ -119,7 +162,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 12
+    // line 47
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,7 +180,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 13
+    // line 48
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,9 +204,14 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  141 => 13,  123 => 12,  104 => 8,  85 => 5,  71 => 14,  68 => 13,  66 => 12,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  184 => 48,  166 => 47,  147 => 8,  128 => 5,  115 => 49,  112 => 48,  110 => 47,  97 => 37,  88 => 31,  73 => 19,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -178,10 +226,44 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
     </head>
     <body>
-        <div class=\"container mt-4\">
+
+    
+    <div class=\"container mt-4\">
+        
+
+        <header class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom\">
+       <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+            <li>
+                <a class=\"nav-link px-2 link-secondary\" href=\"{{ path('app_post_index') }}\">Accueil</a>
+            </li>
+            <li>
+                <a class=\"nav-link px-2 link-secondary\" href=\"#\">Mes publications</a>
+            </li>
+       </ul>
+
+      <div class=\"col-md-3 text-end\">
+        <ul class=\"nav nav-pills align-items-center justify-content-end\">
+
+
+            <li class=\"nav-item px-2\">
+                <a href=\"{{ path('app_login') }}\" class=\"btn btn-outline-dark\">
+                    <span class=\"menu-label\">Se connecter</span>
+                </a>
+            </li>
+
+            <li class=\"nav-item\">
+                <a href=\"{{ path('app_register') }}\" class=\"btn btn-dark\">
+                    <span class=\"menu-label\">S'inscrire</span>
+                </a>
+            </li>
+
+        </ul>
+      </div>
+
+    </header>
+
             {% block body %}{% endblock %}
             {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
-        </div>
     </body>
     <!-- JavaScript Bundle with Popper -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\"></script>

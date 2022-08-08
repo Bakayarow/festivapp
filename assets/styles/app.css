@@ -1,3 +1,24 @@
 body {
-    background-color: lightgray;
+    background-color: white;
+}
+
+.bckcolprim{
+    background-color: #F3E0EC;
+}
+
+.bckcolsec{
+    background-color: #EAD5E6;
+}
+
+.bckcolplight{
+    background-color: #F2BEFC;
+}
+
+.bckcolslight{
+    background-color: #CA9CE1;
+}
+
+.bckcolsslight{
+    background-color: #685F74;
+    color: white;
 }
