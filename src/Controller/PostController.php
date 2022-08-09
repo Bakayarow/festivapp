@@ -17,6 +17,7 @@ use App\Form\CommentType;
 #[Route('/post')]
 class PostController extends AbstractController
 {
+
     #[Route('/', name: 'app_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository, CommentRepository $commentRepository, UserRepository $userRepository, Request $request): Response
     { 

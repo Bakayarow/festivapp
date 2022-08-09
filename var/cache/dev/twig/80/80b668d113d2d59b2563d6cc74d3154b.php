@@ -141,21 +141,29 @@ class __TwigTemplate_02c2b7ed9590062cd0cda7235530fff8 extends Template
                 // line 27
                 ((twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 27)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 27), "Y-m-d H:i"), "html", null, true))) : (print ("")));
                 echo "</p></p>
-                    <p>
-                        <a href=\"";
+
+                        ";
                 // line 29
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-                echo "\">Retirer</a>
-                    </p>
-                </tr>
+                if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getUserId", [], "method", false, false, false, 29), "id", [], "any", false, false, false, 29) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "id", [], "any", false, false, false, 29)) || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 29, $this->source); })()), "getUserId", [], "method", false, false, false, 29), "id", [], "any", false, false, false, 29) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "id", [], "any", false, false, false, 29)))) {
+                    // line 30
+                    echo "                            <p>
+                                <a href=\"";
+                    // line 31
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+                    echo "\">Retirer</a>
+                            </p>
+                      ";
+                }
+                // line 34
+                echo "                </tr>
             ";
             }
-            // line 33
+            // line 36
             echo "            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 34
+            // line 37
             echo "                <tr>
                     <td colspan=\"4\">no records found</td>
                 </tr>
@@ -164,7 +172,7 @@ class __TwigTemplate_02c2b7ed9590062cd0cda7235530fff8 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 41
         echo "    
     </div>
 
@@ -189,7 +197,7 @@ class __TwigTemplate_02c2b7ed9590062cd0cda7235530fff8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  168 => 38,  159 => 34,  154 => 33,  147 => 29,  142 => 27,  138 => 26,  135 => 25,  133 => 24,  128 => 22,  123 => 21,  117 => 17,  111 => 15,  109 => 14,  105 => 13,  100 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  176 => 41,  167 => 37,  162 => 36,  158 => 34,  152 => 31,  149 => 30,  147 => 29,  142 => 27,  138 => 26,  135 => 25,  133 => 24,  128 => 22,  123 => 21,  117 => 17,  111 => 15,  109 => 14,  105 => 13,  100 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -221,9 +229,12 @@ class __TwigTemplate_02c2b7ed9590062cd0cda7235530fff8 extends Template
                     
                         <p class=\"fst-italic\">{{ comment.comment }}
                         <p class=\"fw-light\">{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</p></p>
-                    <p>
-                        <a href=\"{{ path('app_comment_delete', {'id': comment.id}) }}\">Retirer</a>
-                    </p>
+
+                        {% if (comment.getUserId().id  == app.user.id) or (post.getUserId().id  == app.user.id) %}
+                            <p>
+                                <a href=\"{{ path('app_comment_delete', {'id': comment.id}) }}\">Retirer</a>
+                            </p>
+                      {% endif %}
                 </tr>
             {% endif %}
             {% else %}

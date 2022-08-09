@@ -4,16 +4,16 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Bienvenue sur Festiv'App !</h1>
+	<h1 class="col-md-12 text-center py-5">Derniers posts ajoutés</h1>
+
+	<hr>
 
 <div class="container d-flex flex-column justify-content-center align-items-center pt-5">
 {% for post in posts %}
-<div class="card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-5">
+<div class="card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3">
   <img src="{{ vich_uploader_asset(post, 'imageFile') }}" class="card-img-top" alt="{{ post.imageName }}" >
   <div class="card-body p-5 bckcolprim ">
-    {% for user in users %}
-		<h5 class="card-title">{{ user.username }}</h5>
-	{% endfor %}
+<h5 class="card-title">{{ post.getUserId().getUsername() }}</h5>
     <p class="card-text">{{ post.description }}</p>
 
     <p class="card-text"><small class="text-muted">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
@@ -23,6 +23,7 @@
                         {% endif %}
 	<hr class="mt-4">
 	<h4 >Poster un commentaire :</h4>
+	
 			<form method="POST" action={{path('app_comment_new')}}>
 				<textarea name="comment" class="form-control my-2"></textarea>
 				<input hidden name="postId" value={{post.id}} />
@@ -38,7 +39,7 @@
 							<p>{{ comment.comment }}</p>
 						</blockquote>
 						<figcaption class="blockquote-footer">
-							De : {{ comment.id }} <cite title="Source Title"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>
+							De : {{ comment.getUserId().getUsername()  }} <cite title="Source Title"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>
 						</figcaption>
 					</figure>
 					{# 

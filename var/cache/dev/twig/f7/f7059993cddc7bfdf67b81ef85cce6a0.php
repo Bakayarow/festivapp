@@ -86,39 +86,31 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "\t<h1>Bienvenue sur Festiv'App !</h1>
+        echo "\t<h1 class=\"col-md-12 text-center py-5\">Derniers posts ajoutés</h1>
+
+\t<hr>
 
 <div class=\"container d-flex flex-column justify-content-center align-items-center pt-5\">
 ";
-        // line 10
+        // line 12
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 10, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 12, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 11
-            echo "<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-5\">
+            // line 13
+            echo "<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3\">
   <img src=\"";
-            // line 12
+            // line 14
             echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["post"], "imageFile"), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "imageName", [], "any", false, false, false, 12), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "imageName", [], "any", false, false, false, 14), "html", null, true);
             echo "\" >
   <div class=\"card-body p-5 bckcolprim \">
-    ";
-            // line 14
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 14, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 15
-                echo "\t\t<h5 class=\"card-title\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 15), "html", null, true);
-                echo "</h5>
-\t";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
+<h5 class=\"card-title\">";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "getUserId", [], "method", false, false, false, 16), "getUsername", [], "method", false, false, false, 16), "html", null, true);
+            echo "</h5>
+    <p class=\"card-text\">";
             // line 17
-            echo "    <p class=\"card-text\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 17), "html", null, true);
             echo "</p>
 
@@ -142,60 +134,61 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
             // line 24
             echo "\t<hr class=\"mt-4\">
 \t<h4 >Poster un commentaire :</h4>
+\t
 \t\t\t<form method=\"POST\" action=";
-            // line 26
+            // line 27
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new");
             echo ">
 \t\t\t\t<textarea name=\"comment\" class=\"form-control my-2\"></textarea>
 \t\t\t\t<input hidden name=\"postId\" value=";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 28), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo " />
 \t\t\t\t<button class=\"btn btn-dark\">";
-            // line 29
-            echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 29, $this->source); })()), "Publier")) : ("Publier")), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 30, $this->source); })()), "Publier")) : ("Publier")), "html", null, true);
             echo "</button>
 \t\t\t</form>
 
 \t\t\t<hr class=\"mt-4\">
 
 \t\t\t";
-            // line 34
+            // line 35
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 34, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 35, $this->source); })()));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 35
+                // line 36
                 echo "                    ";
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getPostId", [], "method", false, false, false, 35), "id", [], "any", false, false, false, 35) == twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 35))) {
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getPostId", [], "method", false, false, false, 36), "id", [], "any", false, false, false, 36) == twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 36))) {
                     echo " 
 \t\t\t\t\t<figure>
 \t\t\t\t\t\t<blockquote class=\"blockquote\">
 \t\t\t\t\t\t\t<p>";
-                    // line 38
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 38), "html", null, true);
+                    // line 39
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 39), "html", null, true);
                     echo "</p>
 \t\t\t\t\t\t</blockquote>
 \t\t\t\t\t\t<figcaption class=\"blockquote-footer\">
 \t\t\t\t\t\t\tDe : ";
-                    // line 41
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 41), "html", null, true);
+                    // line 42
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "getUserId", [], "method", false, false, false, 42), "getUsername", [], "method", false, false, false, 42), "html", null, true);
                     echo " <cite title=\"Source Title\"> le ";
-                    ((twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 41)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 41), "Y-m-d H:i"), "html", null, true))) : (print ("")));
+                    ((twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 42)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 42), "Y-m-d H:i"), "html", null, true))) : (print ("")));
                     echo "</cite>
 \t\t\t\t\t\t</figcaption>
 \t\t\t\t\t</figure>
 \t\t\t\t\t";
-                    // line 54
+                    // line 55
                     echo "\t\t\t\t\t\t</tr>
                     ";
                 }
-                // line 56
+                // line 57
                 echo "\t\t\t\t\t";
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 57
+                // line 58
                 echo "\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t<td colspan=\"4\">no records found</td>
 \t\t\t\t\t\t</tr>
@@ -204,7 +197,7 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 61
+            // line 62
             echo "  \t\t\t</div>
 \t\t
 \t\t\t
@@ -216,7 +209,7 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 68
+        // line 69
         echo "</div>
 ";
         
@@ -239,7 +232,7 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
 
     public function getDebugInfo()
     {
-        return array (  220 => 68,  208 => 61,  199 => 57,  194 => 56,  190 => 54,  182 => 41,  176 => 38,  169 => 35,  164 => 34,  156 => 29,  152 => 28,  147 => 26,  143 => 24,  137 => 22,  135 => 21,  131 => 20,  127 => 19,  121 => 17,  112 => 15,  108 => 14,  101 => 12,  98 => 11,  94 => 10,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  213 => 69,  201 => 62,  192 => 58,  187 => 57,  183 => 55,  175 => 42,  169 => 39,  162 => 36,  157 => 35,  149 => 30,  145 => 29,  140 => 27,  135 => 24,  129 => 22,  127 => 21,  123 => 20,  119 => 19,  114 => 17,  110 => 16,  103 => 14,  100 => 13,  96 => 12,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -250,16 +243,16 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
 {% endblock %}
 
 {% block body %}
-\t<h1>Bienvenue sur Festiv'App !</h1>
+\t<h1 class=\"col-md-12 text-center py-5\">Derniers posts ajoutés</h1>
+
+\t<hr>
 
 <div class=\"container d-flex flex-column justify-content-center align-items-center pt-5\">
 {% for post in posts %}
-<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-5\">
+<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3\">
   <img src=\"{{ vich_uploader_asset(post, 'imageFile') }}\" class=\"card-img-top\" alt=\"{{ post.imageName }}\" >
   <div class=\"card-body p-5 bckcolprim \">
-    {% for user in users %}
-\t\t<h5 class=\"card-title\">{{ user.username }}</h5>
-\t{% endfor %}
+<h5 class=\"card-title\">{{ post.getUserId().getUsername() }}</h5>
     <p class=\"card-text\">{{ post.description }}</p>
 
     <p class=\"card-text\"><small class=\"text-muted\">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
@@ -269,6 +262,7 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
                         {% endif %}
 \t<hr class=\"mt-4\">
 \t<h4 >Poster un commentaire :</h4>
+\t
 \t\t\t<form method=\"POST\" action={{path('app_comment_new')}}>
 \t\t\t\t<textarea name=\"comment\" class=\"form-control my-2\"></textarea>
 \t\t\t\t<input hidden name=\"postId\" value={{post.id}} />
@@ -284,7 +278,7 @@ class __TwigTemplate_c559b70d831807a4adf1680d3c46af9b extends Template
 \t\t\t\t\t\t\t<p>{{ comment.comment }}</p>
 \t\t\t\t\t\t</blockquote>
 \t\t\t\t\t\t<figcaption class=\"blockquote-footer\">
-\t\t\t\t\t\t\tDe : {{ comment.id }} <cite title=\"Source Title\"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>
+\t\t\t\t\t\t\tDe : {{ comment.getUserId().getUsername()  }} <cite title=\"Source Title\"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>
 \t\t\t\t\t\t</figcaption>
 \t\t\t\t\t</figure>
 \t\t\t\t\t{# 

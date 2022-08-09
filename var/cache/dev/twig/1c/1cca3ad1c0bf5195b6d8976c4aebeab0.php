@@ -96,48 +96,27 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
             </tr>
         </thead>
         <tbody>
-        ";
-        // line 17
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 17, $this->source); })()));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 18
-            echo "            <tr>
+            <tr>
                 <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 19), "html", null, true);
-            echo "</td>
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "email", [], "any", false, false, false, 18), "html", null, true);
+        echo "</td>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "username", [], "any", false, false, false, 19), "html", null, true);
+        echo "</td>
                 <td>
                     <a href=\"";
-            // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 22)]), "html", null, true);
-            echo "\">show</a>
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        echo "\">show</a>
                     <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 23)]), "html", null, true);
-            echo "\">edit</a>
+        // line 22
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "user", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+        echo "\">edit</a>
                 </td>
             </tr>
-        ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 27
-            echo "            <tr>
-                <td colspan=\"6\">no records found</td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        echo "        </tbody>
+        </tbody>
     </table>
 
 ";
@@ -161,7 +140,7 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
 
     public function getDebugInfo()
     {
-        return array (  140 => 31,  131 => 27,  122 => 23,  118 => 22,  113 => 20,  109 => 19,  106 => 18,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  115 => 22,  111 => 21,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -182,20 +161,14 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
             <tr>
-                <td>{{ user.email }}</td>
-                <td>{{ user.username }}</td>
+                <td>{{ app.user.email }}</td>
+                <td>{{ app.user.username }}</td>
                 <td>
-                    <a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
-                    <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>
+                    <a href=\"{{ path('app_user_show', {'id': app.user.id}) }}\">show</a>
+                    <a href=\"{{ path('app_user_edit', {'id': app.user.id}) }}\">edit</a>
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"6\">no records found</td>
-            </tr>
-        {% endfor %}
         </tbody>
     </table>
 

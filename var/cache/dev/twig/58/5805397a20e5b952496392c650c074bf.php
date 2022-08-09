@@ -54,10 +54,11 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         echo "</title>
         <!-- CSS only -->
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');</style> 
         ";
-        // line 8
-        $this->displayBlock('stylesheets', $context, $blocks);
         // line 9
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 10
         echo "    </head>
     <body>
 
@@ -69,31 +70,52 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
             <li>
                 <a class=\"nav-link px-2 link-secondary\" href=\"";
-        // line 19
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
         echo "\">Accueil</a>
             </li>
             <li>
-                <a class=\"nav-link px-2 link-secondary\" href=\"#\">Mes publications</a>
+                <a class=\"nav-link px-2 link-secondary\" href=";
+        // line 23
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_post");
+        echo ">Mes publications</a>
             </li>
        </ul>
 
-      <div class=\"col-md-3 text-end\">
+      <div class=\"col-md-5 text-end\">
+      
+            
         <ul class=\"nav nav-pills align-items-center justify-content-end\">
-
-
+        ";
+        // line 31
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
+            // line 32
+            echo "                <div nav-item px-2>
+                    ";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33), "userIdentifier", [], "any", false, false, false, 33), "html", null, true);
+            echo " <a class=\"btn btn-outline-danger mx-2\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Déconnexion</a>
+                </div>
+            ";
+        } else {
+            // line 36
+            echo "
             <li class=\"nav-item px-2\">
                 <a href=\"";
-        // line 31
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" class=\"btn btn-outline-dark\">
+            // line 38
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\" class=\"btn btn-outline-dark\">
                     <span class=\"menu-label\">Se connecter</span>
                 </a>
             </li>
-
-            <li class=\"nav-item\">
+            ";
+        }
+        // line 43
+        echo "            <li class=\"nav-item\">
                 <a href=\"";
-        // line 37
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\" class=\"btn btn-dark\">
                     <span class=\"menu-label\">S'inscrire</span>
@@ -106,12 +128,12 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
     </header>
 
             ";
-        // line 47
+        // line 54
         $this->displayBlock('body', $context, $blocks);
-        // line 48
+        // line 55
         echo "            ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 49
+        // line 56
         echo "    </body>
     <!-- JavaScript Bundle with Popper -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\"></script>
@@ -143,7 +165,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +184,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 47
+    // line 54
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -180,7 +202,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 48
+    // line 55
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -211,7 +233,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     public function getDebugInfo()
     {
-        return array (  184 => 48,  166 => 47,  147 => 8,  128 => 5,  115 => 49,  112 => 48,  110 => 47,  97 => 37,  88 => 31,  73 => 19,  61 => 9,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  206 => 55,  188 => 54,  169 => 9,  150 => 5,  137 => 56,  134 => 55,  132 => 54,  119 => 44,  116 => 43,  108 => 38,  104 => 36,  96 => 33,  93 => 32,  91 => 31,  80 => 23,  74 => 20,  62 => 10,  60 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -223,6 +245,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         <title>{% block title %}Welcome!{% endblock %}</title>
         <!-- CSS only -->
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');</style> 
         {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
     </head>
     <body>
@@ -237,20 +260,26 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
                 <a class=\"nav-link px-2 link-secondary\" href=\"{{ path('app_post_index') }}\">Accueil</a>
             </li>
             <li>
-                <a class=\"nav-link px-2 link-secondary\" href=\"#\">Mes publications</a>
+                <a class=\"nav-link px-2 link-secondary\" href={{ path('app_my_post') }}>Mes publications</a>
             </li>
        </ul>
 
-      <div class=\"col-md-3 text-end\">
+      <div class=\"col-md-5 text-end\">
+      
+            
         <ul class=\"nav nav-pills align-items-center justify-content-end\">
-
+        {% if app.user %}
+                <div nav-item px-2>
+                    {{ app.user.userIdentifier }} <a class=\"btn btn-outline-danger mx-2\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                </div>
+            {% else %}
 
             <li class=\"nav-item px-2\">
                 <a href=\"{{ path('app_login') }}\" class=\"btn btn-outline-dark\">
                     <span class=\"menu-label\">Se connecter</span>
                 </a>
             </li>
-
+            {% endif %}
             <li class=\"nav-item\">
                 <a href=\"{{ path('app_register') }}\" class=\"btn btn-dark\">
                     <span class=\"menu-label\">S'inscrire</span>

@@ -16,6 +16,12 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PostRepository extends ServiceEntityRepository
 {
+
+    public function findAll()
+    {
+        return $this->findBy(array(), array('createdAt' => 'DESC'));
+    }
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Post::class);

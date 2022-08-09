@@ -25,9 +25,12 @@
                     
                         <p class="fst-italic">{{ comment.comment }}
                         <p class="fw-light">{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</p></p>
-                    <p>
-                        <a href="{{ path('app_comment_delete', {'id': comment.id}) }}">Retirer</a>
-                    </p>
+
+                        {% if (comment.getUserId().id  == app.user.id) or (post.getUserId().id  == app.user.id) %}
+                            <p>
+                                <a href="{{ path('app_comment_delete', {'id': comment.id}) }}">Retirer</a>
+                            </p>
+                      {% endif %}
                 </tr>
             {% endif %}
             {% else %}

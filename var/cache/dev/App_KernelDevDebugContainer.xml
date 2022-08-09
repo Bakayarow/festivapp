@@ -320,6 +320,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\CommentController"/>
       </call>
     </service>
+    <service id="App\Controller\MyPostController" class="App\Controller\MyPostController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\MyPostController"/>
+      </call>
+    </service>
     <service id="App\Controller\PostController" class="App\Controller\PostController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4570,6 +4577,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CommentController" class="App\Controller\CommentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CommentController" class="App\Controller\CommentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CommentController" class="App\Controller\CommentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MyPostController" class="App\Controller\MyPostController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MyPostController" class="App\Controller\MyPostController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MyPostController" class="App\Controller\MyPostController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PostController" class="App\Controller\PostController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PostController" class="App\Controller\PostController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PostController" class="App\Controller\PostController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4950,18 +4960,18 @@
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.Xf_chUG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.dbbjmJE" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="commentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
         <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.Xf_chUG" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
       </argument>
     </service>
     <service id=".service_locator.OH36RVd" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5010,7 +5020,7 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Au1qWVD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wc8OnzX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CommentController::delete" type="service_closure" id=".service_locator.KBkob.L"/>
@@ -5018,6 +5028,7 @@
         <argument key="App\Controller\CommentController::index" type="service_closure" id=".service_locator.VXcOMBY"/>
         <argument key="App\Controller\CommentController::new" type="service_closure" id=".service_locator.vCnrsYt"/>
         <argument key="App\Controller\CommentController::show" type="service_closure" id=".service_locator.PK5KVtZ"/>
+        <argument key="App\Controller\MyPostController::index" type="service_closure" id=".service_locator.Xf_chUG"/>
         <argument key="App\Controller\PostController::delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController::index" type="service_closure" id=".service_locator.dbbjmJE"/>
@@ -5041,6 +5052,7 @@
         <argument key="App\Controller\CommentController:index" type="service_closure" id=".service_locator.VXcOMBY"/>
         <argument key="App\Controller\CommentController:new" type="service_closure" id=".service_locator.vCnrsYt"/>
         <argument key="App\Controller\CommentController:show" type="service_closure" id=".service_locator.PK5KVtZ"/>
+        <argument key="App\Controller\MyPostController:index" type="service_closure" id=".service_locator.Xf_chUG"/>
         <argument key="App\Controller\PostController:delete" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:edit" type="service_closure" id=".service_locator.JQ.Ubn6"/>
         <argument key="App\Controller\PostController:index" type="service_closure" id=".service_locator.dbbjmJE"/>
@@ -5220,6 +5232,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\MyPostController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\MyPostController"/>
+      <argument>App\Controller\MyPostController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
     <service id=".service_locator.jIxfAsi.App\Controller\PostController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\PostController"/>
       <argument>App\Controller\PostController</argument>
@@ -5391,12 +5409,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Au1qWVD"/>
+      <argument type="service" id=".service_locator.wc8OnzX"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Au1qWVD"/>
+      <argument type="service" id=".service_locator.wc8OnzX"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -6186,7 +6204,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Au1qWVD"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.wc8OnzX"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
@@ -6195,7 +6213,7 @@
     <service id=".service_locator.wYvy8zf" alias=".service_locator.dbbjmJE"/>
     <service id=".service_locator.1mLEFLP" alias=".service_locator.OH36RVd"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.5DLHKKp" alias=".service_locator.Au1qWVD"/>
+    <service id=".service_locator.f7GeOhn" alias=".service_locator.wc8OnzX"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.ZgJENF1" alias=".service_locator.FG.89FU"/>
     <service id=".service_locator.Uukl3tw" alias=".service_locator.jBidh55"/>
@@ -6225,8 +6243,8 @@
     <service id=".service_locator.6XvKX4J" alias=".service_locator.vCnrsYt"/>
     <service id=".service_locator.SHgVz3H" alias=".service_locator.PK5KVtZ"/>
     <service id=".service_locator.bYmWu3J" alias=".service_locator.KBkob.L"/>
-    <service id=".service_locator.XIlM3eq" alias=".service_locator.dbbjmJE"/>
     <service id=".service_locator.AtDfmcq" alias=".service_locator.Xf_chUG"/>
+    <service id=".service_locator.XIlM3eq" alias=".service_locator.dbbjmJE"/>
     <service id=".service_locator.fvLusW8" alias=".service_locator.OH36RVd"/>
     <service id=".service_locator.m6FqfrM" alias=".service_locator.JQ.Ubn6"/>
     <service id=".service_locator.DoCD.2o" alias=".service_locator.YU8H6ve"/>
