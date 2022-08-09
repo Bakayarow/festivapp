@@ -3,7 +3,7 @@ body {
 }
 
 .bckcolprim{
-    background-color: #F3E0EC;
+    background-color: beige;
 }
 
 .bckcolsec{
@@ -21,4 +21,8 @@ body {
 .bckcolsslight{
     background-color: #685F74;
     color: white;
+}
+
+.sfToolbarClearer-bb47f3{
+    background-color: #F3E0EC;
 }

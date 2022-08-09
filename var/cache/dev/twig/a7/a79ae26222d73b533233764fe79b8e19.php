@@ -85,42 +85,38 @@ class __TwigTemplate_e72d236f48bead09c53d04228bb1fdd8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>User</h1>
-
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>Email</th>
-                <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 12, $this->source); })()), "email", [], "any", false, false, false, 12), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Username</th>
-                <td>";
+        echo "    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"card shadow-lg mb-5 bg-body rounded-5\" style=\"width: 30rem;\">
+            <div class=\"card-body p-5 text-center\">
+                <h1 class=\"card-title \">";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()), "username", [], "any", false, false, false, 9), "html", null, true);
+        echo "</h1>
+                <hr>
+                
+                <dl class=\"row mt-5\">
+                    <dt class=\"col-12 text-start\">Email :</dt>
+                    <dd class=\"col-sm-12 text-start\">";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 14, $this->source); })()), "email", [], "any", false, false, false, 14), "html", null, true);
+        echo "</dd>
+                    <dt class=\"col-sm-12 text-start\">Nom d'utilisateur :</dt>
+                    <dd class=\"col-sm-12 text-start\">";
         // line 16
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16), "html", null, true);
-        echo "</td>
-            </tr>
-        </tbody>
-    </table>
+        echo "</dd>
+                </dl>
 
-    <a href=\"";
-        // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        echo "\">back to list</a>
-
-    <a href=\"";
+                ";
         // line 23
+        echo "                <a href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
-        echo "\">edit</a>
+        echo "\" class=\"btn btn-outline-dark mt-3\">Modifier le profil</a>
+            </div>
+        </div>
+    </div>
 
     ";
-        // line 25
-        echo twig_include($this->env, $context, "user/_delete_form.html.twig");
-        echo "
-";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -141,7 +137,7 @@ class __TwigTemplate_e72d236f48bead09c53d04228bb1fdd8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  121 => 25,  116 => 23,  111 => 21,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  112 => 23,  106 => 16,  101 => 14,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,7 +146,32 @@ class __TwigTemplate_e72d236f48bead09c53d04228bb1fdd8 extends Template
 
 {% block title %}User{% endblock %}
 
-{% block body %}
+    {% block body %}
+    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"card shadow-lg mb-5 bg-body rounded-5\" style=\"width: 30rem;\">
+            <div class=\"card-body p-5 text-center\">
+                <h1 class=\"card-title \">{{ user.username }}</h1>
+                <hr>
+                
+                <dl class=\"row mt-5\">
+                    <dt class=\"col-12 text-start\">Email :</dt>
+                    <dd class=\"col-sm-12 text-start\">{{ user.email }}</dd>
+                    <dt class=\"col-sm-12 text-start\">Nom d'utilisateur :</dt>
+                    <dd class=\"col-sm-12 text-start\">{{ user.username }}</dd>
+                </dl>
+
+                {#  
+                <p class=\"card-text fw_light text-start mt-5\">Email : {{ user.email }}</p>
+                <p class=\"card-text fw_light text-start\">Nom d'utilisateur : {{ user.username }}</p>
+                #}
+                <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\" class=\"btn btn-outline-dark mt-3\">Modifier le profil</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+{#  
     <h1>User</h1>
 
     <table class=\"table\">
@@ -172,6 +193,6 @@ class __TwigTemplate_e72d236f48bead09c53d04228bb1fdd8 extends Template
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
-", "user/show.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\user\\show.html.twig");
+#}", "user/show.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\user\\show.html.twig");
     }
 }

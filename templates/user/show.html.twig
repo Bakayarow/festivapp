@@ -2,7 +2,32 @@
 
 {% block title %}User{% endblock %}
 
-{% block body %}
+    {% block body %}
+    <div class="container d-flex justify-content-center pt-5">
+        <div class="card shadow-lg mb-5 bg-body rounded-5" style="width: 30rem;">
+            <div class="card-body p-5 text-center">
+                <h1 class="card-title ">{{ user.username }}</h1>
+                <hr>
+                
+                <dl class="row mt-5">
+                    <dt class="col-12 text-start">Email :</dt>
+                    <dd class="col-sm-12 text-start">{{ user.email }}</dd>
+                    <dt class="col-sm-12 text-start">Nom d'utilisateur :</dt>
+                    <dd class="col-sm-12 text-start">{{ user.username }}</dd>
+                </dl>
+
+                {#  
+                <p class="card-text fw_light text-start mt-5">Email : {{ user.email }}</p>
+                <p class="card-text fw_light text-start">Nom d'utilisateur : {{ user.username }}</p>
+                #}
+                <a href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-outline-dark mt-3">Modifier le profil</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+{#  
     <h1>User</h1>
 
     <table class="table">
@@ -24,3 +49,4 @@
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
+#}
