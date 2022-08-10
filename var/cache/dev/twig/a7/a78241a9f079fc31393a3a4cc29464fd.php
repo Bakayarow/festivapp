@@ -85,20 +85,23 @@ class __TwigTemplate_7f9e2eb962f6aaee8a7d575ae6bade1d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Post</h1>
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
+        // line 7
+        echo "
+    <h1>Edit Post</h1>
 
     ";
-        // line 8
-        echo twig_include($this->env, $context, "post/_form.html.twig", ["button_label" => "Update"]);
+        // line 10
+        echo twig_include($this->env, $context, "post/_form.html.twig", ["button_label" => "Mettre à jour"]);
         echo "
 
     <a href=\"";
-        // line 10
+        // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-dark\">Revenir à l'accueil</a>
 
     ";
-        // line 12
+        // line 14
         echo twig_include($this->env, $context, "post/_delete_form.html.twig");
         echo "
 ";
@@ -122,7 +125,7 @@ class __TwigTemplate_7f9e2eb962f6aaee8a7d575ae6bade1d extends Template
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 14,  100 => 12,  95 => 10,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,11 +135,13 @@ class __TwigTemplate_7f9e2eb962f6aaee8a7d575ae6bade1d extends Template
 {% block title %}Edit Post{% endblock %}
 
 {% block body %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
     <h1>Edit Post</h1>
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('post/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href=\"{{ path('app_post_index') }}\">back to list</a>
+    <a href=\"{{ path('app_post_index') }}\" class=\"btn btn-dark\">Revenir à l'accueil</a>
 
     {{ include('post/_delete_form.html.twig') }}
 {% endblock %}

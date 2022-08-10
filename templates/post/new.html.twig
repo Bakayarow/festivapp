@@ -3,7 +3,10 @@
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1>Nouvelle publication</h1>
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+    <h1 class="col-md-12 text-center py-5">Nouvelle publication</h1>
+        <hr>
 
     {{ include('post/_form.html.twig') }}
 

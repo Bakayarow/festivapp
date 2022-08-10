@@ -2,14 +2,16 @@
 
 {% block title %}Edit User{% endblock %}
 
+
 {% block body %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <h1 class="col-md-12 text-center py-5">Modifier mon profil</h1>
         <hr>
 <div class="container d-flex justify-content-center pt-5">
     <div class="col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5">
         
 
-        {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
        
 

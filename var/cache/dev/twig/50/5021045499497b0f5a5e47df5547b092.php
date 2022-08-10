@@ -85,15 +85,19 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Nouvelle publication</h1>
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
+        // line 7
+        echo "
+    <h1 class=\"col-md-12 text-center py-5\">Nouvelle publication</h1>
+        <hr>
 
     ";
-        // line 8
+        // line 11
         echo twig_include($this->env, $context, "post/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 10
+        // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
         echo "\" class=\"btn btn-dark\">Revenir à l'accueil</a>
 ";
@@ -117,7 +121,7 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 13,  96 => 11,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,7 +131,10 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1>Nouvelle publication</h1>
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+    <h1 class=\"col-md-12 text-center py-5\">Nouvelle publication</h1>
+        <hr>
 
     {{ include('post/_form.html.twig') }}
 

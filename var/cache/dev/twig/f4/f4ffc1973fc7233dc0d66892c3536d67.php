@@ -74,7 +74,7 @@ class __TwigTemplate_193aa481c7be99d8b90ba0df14e168c5 extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +84,9 @@ class __TwigTemplate_193aa481c7be99d8b90ba0df14e168c5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
+        $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), [0 => "bootstrap_5_layout.html.twig"], true);
+        // line 8
         echo "<h1 class=\"col-md-12 text-center py-5\">Modifier mon profil</h1>
         <hr>
 <div class=\"container d-flex justify-content-center pt-5\">
@@ -92,19 +94,19 @@ class __TwigTemplate_193aa481c7be99d8b90ba0df14e168c5 extends Template
         
 
         ";
-        // line 12
-        echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
+        // line 14
+        echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Mettre à jour"]);
         echo "
 
        
 
         ";
-        // line 16
+        // line 18
         echo twig_include($this->env, $context, "user/_delete_form.html.twig");
         echo "
          <a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "id", [], "any", false, false, false, 17)]), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "id", [], "any", false, false, false, 19)]), "html", null, true);
         echo "\" class=\"btn btn-outline-dark my-3\">Retour au profil</a>
 
         </div>
@@ -131,7 +133,7 @@ class __TwigTemplate_193aa481c7be99d8b90ba0df14e168c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  109 => 19,  105 => 18,  98 => 14,  90 => 8,  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -140,14 +142,16 @@ class __TwigTemplate_193aa481c7be99d8b90ba0df14e168c5 extends Template
 
 {% block title %}Edit User{% endblock %}
 
+
 {% block body %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <h1 class=\"col-md-12 text-center py-5\">Modifier mon profil</h1>
         <hr>
 <div class=\"container d-flex justify-content-center pt-5\">
     <div class=\"col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5\">
         
 
-        {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
        
 

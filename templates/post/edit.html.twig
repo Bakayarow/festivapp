@@ -3,11 +3,13 @@
 {% block title %}Edit Post{% endblock %}
 
 {% block body %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
     <h1>Edit Post</h1>
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('post/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+    <a href="{{ path('app_post_index') }}" class="btn btn-dark">Revenir à l'accueil</a>
 
     {{ include('post/_delete_form.html.twig') }}
 {% endblock %}
