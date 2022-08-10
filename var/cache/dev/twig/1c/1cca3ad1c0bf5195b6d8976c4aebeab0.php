@@ -85,41 +85,24 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>User index</h1>
+        echo "    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5 text-center\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"56\" height=\"56\" fill=\"currentColor\" class=\"bi bi-check-circle-fill text-success m-5\" viewBox=\"0 0 16 16\">
+                    <path d=\"M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z\"/>
+                </svg>
+                <h1 class=\"h3 mb-3 font-weight-normal \">Profil modifié !</h1>
+                <a href=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "id", [], "any", false, false, false, 12)]), "html", null, true);
+        echo "\" class=\"btn btn-outline-dark my-3\">
+                    Mon profil
+                </a>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Username</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "email", [], "any", false, false, false, 18), "html", null, true);
-        echo "</td>
-                <td>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "username", [], "any", false, false, false, 19), "html", null, true);
-        echo "</td>
-                <td>
-                    <a href=\"";
-        // line 21
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "id", [], "any", false, false, false, 21)]), "html", null, true);
-        echo "\">show</a>
-                    <a href=\"";
-        // line 22
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "user", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
-        echo "\">edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 
-";
+        </div>
+    </div>
+
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -140,7 +123,7 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
 
     public function getDebugInfo()
     {
-        return array (  115 => 22,  111 => 21,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,8 +133,22 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5 text-center\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"56\" height=\"56\" fill=\"currentColor\" class=\"bi bi-check-circle-fill text-success m-5\" viewBox=\"0 0 16 16\">
+                    <path d=\"M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z\"/>
+                </svg>
+                <h1 class=\"h3 mb-3 font-weight-normal \">Profil modifié !</h1>
+                <a href=\"{{ path('app_user_show', {'id': app.user.id}) }}\" class=\"btn btn-outline-dark my-3\">
+                    Mon profil
+                </a>
 
+
+        </div>
+    </div>
+
+    {% endblock %}
+{#  
     <table class=\"table\">
         <thead>
             <tr>
@@ -171,8 +168,8 @@ class __TwigTemplate_527c46be0c3f7cd092457f7e1f14bd88 extends Template
             </tr>
         </tbody>
     </table>
+#}
 
-{% endblock %}
 ", "user/index.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\user\\index.html.twig");
     }
 }
