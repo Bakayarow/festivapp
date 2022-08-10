@@ -55,30 +55,44 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         <!-- CSS only -->
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
         <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');</style> 
+        <style>@import url(\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css\");</style> 
         ";
-        // line 9
-        $this->displayBlock('stylesheets', $context, $blocks);
         // line 10
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 11
         echo "    </head>
     <body>
 
     
     <div class=\"container mt-4\">
-        
 
         <header class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom\">
        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+        ";
+        // line 19
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) {
+            // line 20
+            echo "        
             <li>
                 <a class=\"nav-link px-2 link-secondary\" href=\"";
-        // line 20
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
-        echo "\">Accueil</a>
+            // line 22
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
+            echo "\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-house-fill mx-2\" viewBox=\"0 0 16 16\">
+                    <path fill-rule=\"evenodd\" d=\"m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z\"/>
+                    <path fill-rule=\"evenodd\" d=\"M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z\"/>
+                </svg>
+                Accueil</a>
             </li>
             <li>
-                <a class=\"nav-link px-2 link-secondary\" href=";
-        // line 23
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_post");
-        echo ">Mes publications</a>
+                <a class=\"nav-link px-3 link-secondary\" href=";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_my_post");
+            echo ">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-grid-1x2-fill mx-2\" viewBox=\"0 0 16 16\">
+                    <path d=\"M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z\"/>
+                </svg>
+                Mes publications</a>
             </li>
        </ul>
 
@@ -86,25 +100,31 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
       
             
         <ul class=\"nav nav-pills align-items-center justify-content-end\">
-        ";
-        // line 31
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
-            // line 32
-            echo "                <div nav-item px-2>
-                    ";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33), "userIdentifier", [], "any", false, false, false, 33), "html", null, true);
-            echo " <a class=\"btn btn-outline-danger mx-2\" href=\"";
+                <div nav-item px-2>
+                <a class=\"btn btn-outline-dark\" href=\"";
+            // line 43
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "id", [], "any", false, false, false, 43)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43), "username", [], "any", false, false, false, 43), "html", null, true);
+            echo " 
+                    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-person-circle\" viewBox=\"0 0 16 16\">
+                        <path d=\"M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z\"/>
+                        <path fill-rule=\"evenodd\" d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z\"/>
+                    </svg> 
+                </a>
+                    
+<a class=\"btn btn-outline-danger mx-2\" href=\"";
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                 </div>
             ";
         } else {
-            // line 36
+            // line 53
             echo "
             <li class=\"nav-item px-2\">
                 <a href=\"";
-            // line 38
+            // line 55
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-outline-dark\">
                     <span class=\"menu-label\">Se connecter</span>
@@ -112,10 +132,10 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
             </li>
             ";
         }
-        // line 43
+        // line 60
         echo "            <li class=\"nav-item\">
                 <a href=\"";
-        // line 44
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         echo "\" class=\"btn btn-dark\">
                     <span class=\"menu-label\">S'inscrire</span>
@@ -128,12 +148,12 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
     </header>
 
             ";
-        // line 54
+        // line 71
         $this->displayBlock('body', $context, $blocks);
-        // line 55
+        // line 72
         echo "            ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 56
+        // line 73
         echo "    </body>
     <!-- JavaScript Bundle with Popper -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\"></script>
@@ -165,7 +185,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 9
+    // line 10
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -184,7 +204,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 54
+    // line 71
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,7 +222,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     }
 
-    // line 55
+    // line 72
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -233,7 +253,7 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
 
     public function getDebugInfo()
     {
-        return array (  206 => 55,  188 => 54,  169 => 9,  150 => 5,  137 => 56,  134 => 55,  132 => 54,  119 => 44,  116 => 43,  108 => 38,  104 => 36,  96 => 33,  93 => 32,  91 => 31,  80 => 23,  74 => 20,  62 => 10,  60 => 9,  53 => 5,  47 => 1,);
+        return array (  226 => 72,  208 => 71,  189 => 10,  170 => 5,  157 => 73,  154 => 72,  152 => 71,  139 => 61,  136 => 60,  128 => 55,  124 => 53,  118 => 50,  106 => 43,  90 => 30,  79 => 22,  75 => 20,  73 => 19,  63 => 11,  61 => 10,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -246,21 +266,32 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
         <!-- CSS only -->
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
         <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');</style> 
+        <style>@import url(\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css\");</style> 
         {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
     </head>
     <body>
 
     
     <div class=\"container mt-4\">
-        
 
         <header class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom\">
        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+        {% if app.user %}
+        
             <li>
-                <a class=\"nav-link px-2 link-secondary\" href=\"{{ path('app_post_index') }}\">Accueil</a>
+                <a class=\"nav-link px-2 link-secondary\" href=\"{{ path('app_post_index') }}\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-house-fill mx-2\" viewBox=\"0 0 16 16\">
+                    <path fill-rule=\"evenodd\" d=\"m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z\"/>
+                    <path fill-rule=\"evenodd\" d=\"M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z\"/>
+                </svg>
+                Accueil</a>
             </li>
             <li>
-                <a class=\"nav-link px-2 link-secondary\" href={{ path('app_my_post') }}>Mes publications</a>
+                <a class=\"nav-link px-3 link-secondary\" href={{ path('app_my_post') }}>
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-grid-1x2-fill mx-2\" viewBox=\"0 0 16 16\">
+                    <path d=\"M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z\"/>
+                </svg>
+                Mes publications</a>
             </li>
        </ul>
 
@@ -268,9 +299,15 @@ class __TwigTemplate_95c4dc8ba9fa0a88909b02784f61184c extends Template
       
             
         <ul class=\"nav nav-pills align-items-center justify-content-end\">
-        {% if app.user %}
                 <div nav-item px-2>
-                    {{ app.user.userIdentifier }} <a class=\"btn btn-outline-danger mx-2\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                <a class=\"btn btn-outline-dark\" href=\"{{ path('app_user_show', {'id': app.user.id}) }}\">{{ app.user.username }} 
+                    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"25\" height=\"25\" fill=\"currentColor\" class=\"bi bi-person-circle\" viewBox=\"0 0 16 16\">
+                        <path d=\"M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z\"/>
+                        <path fill-rule=\"evenodd\" d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z\"/>
+                    </svg> 
+                </a>
+                    
+<a class=\"btn btn-outline-danger mx-2\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
                 </div>
             {% else %}
 

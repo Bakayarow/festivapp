@@ -5,16 +5,17 @@
 
 {% block body %}
 	<h1 class="col-md-12 text-center py-5">Derniers posts ajoutés</h1>
-
+	
 	<hr>
-
 <div class="container d-flex flex-column justify-content-center align-items-center pt-5">
+<a href="{{ path('app_post_new')}}" class="btn btn-outline-dark p-3" >Nouvelle publication + </a>
+
 {% for post in posts %}
 <div class="card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3">
   <img src="{{ vich_uploader_asset(post, 'imageFile') }}" class="card-img-top" alt="{{ post.imageName }}" >
   <div class="card-body p-5 bckcolprim ">
-<h5 class="card-title">{{ post.getUserId().getUsername() }}</h5>
-    <p class="card-text">{{ post.description }}</p>
+<h5 class="card-title fw-bold bckcolslightt">{{ post.getUserId().getUsername() }}</h5>
+    <p class="card-text fs-5">{{ post.description }}</p>
 
     <p class="card-text"><small class="text-muted">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
 	<a href="{{ path('app_post_show', {'id': post.id}) }}" class="btn btn-dark" >Voir le post</a>
@@ -36,7 +37,7 @@
                     {% if comment.getPostId().id == post.id  %} 
 					<figure>
 						<blockquote class="blockquote">
-							<p>{{ comment.comment }}</p>
+							<p class="fs-6">{{ comment.comment }}</p>
 						</blockquote>
 						<figcaption class="blockquote-footer">
 							De : {{ comment.getUserId().getUsername()  }} <cite title="Source Title"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>

@@ -8,34 +8,42 @@
 <div class="card mb-3 col-md-6 my-3 shadow-lg mb-5 bg-body rounded-3">
   <img src="{{ vich_uploader_asset(post) }}" alt="{{ post.imageName }}" >
   <div class="card-body p-5 bckcolprim ">
+<h5 class="card-title fw-bold bckcolslightt">{{ post.getUserId().getUsername() }}</h5>
     <p class="card-text">{{ post.description }}</p>
 
     <p class="card-text"><small class="text-muted">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
         {% if post.getUserId().id  == app.user.id %}
-			<a href="{{ path('app_post_edit', {'id': post.id}) }}" class="btn bckcolsslight">Modifier</a>
+			<a href="{{ path('app_post_edit', {'id': post.id}) }}" class="btn btn-outline-dark">Modifier</a>
         {% endif %}
 	<hr>
 
     <h4>Commentaires :</h4>
-
+<hr>
         {% for comment in comments %}
             {% if comment.getPostId().id == post.id  %} 
                     {# <p>{{ comment.id }}</p> #}
                     {# <p> {{post.id }}</p> #}
                     
-                        <p class="fst-italic">{{ comment.comment }}
-                        <p class="fw-light">{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</p></p>
+					<figure>
+						<blockquote class="blockquote">
+							<p>{{ comment.comment }}</p>
+						</blockquote>
+						<figcaption class="blockquote-footer">
+							De : {{ comment.getUserId().getUsername()  }} <cite title="Source Title"> le {{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i') : '' }}</cite>
+						</figcaption>
+					</figure>
 
                         {% if (comment.getUserId().id  == app.user.id) or (post.getUserId().id  == app.user.id) %}
                             <p>
-                                <a href="{{ path('app_comment_delete', {'id': comment.id}) }}">Retirer</a>
+                                <a href="{{ path('app_comment_delete', {'id': comment.id}) }}" class="link-danger">Retirer</a>
                             </p>
+                            
                       {% endif %}
                 </tr>
             {% endif %}
             {% else %}
                 <tr>
-                    <td colspan="4">no records found</td>
+                    <td colspan="4">Aucun commentaire.</td>
                 </tr>
         {% endfor %}
     

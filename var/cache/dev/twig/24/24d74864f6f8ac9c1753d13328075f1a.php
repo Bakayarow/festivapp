@@ -85,61 +85,72 @@ class __TwigTemplate_7d1ab633ec39468e7b32da9a2a9195e7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
+        echo "\t<h1 class=\"col-md-12 text-center py-5\">Mes publications</h1>
+    <hr class=\" pb-5\">
+
+<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    ";
-        // line 12
+
+   
+    <div class=\"container d-flex flex-wrap justify-content-around \">
+
+        ";
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["myPosts"]) || array_key_exists("myPosts", $context) ? $context["myPosts"] : (function () { throw new RuntimeError('Variable "myPosts" does not exist.', 12, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["myPosts"]) || array_key_exists("myPosts", $context) ? $context["myPosts"] : (function () { throw new RuntimeError('Variable "myPosts" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 13
-            echo "<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3\">
-  <img src=\"";
-            // line 14
+            // line 19
+            echo "            <div class=\"card mb-3 col-md-5 shadow-lg mb-5 bg-body rounded-3\">
+            
+                <img src=\"";
+            // line 21
             echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["post"], "imageFile"), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "imageName", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "imageName", [], "any", false, false, false, 21), "html", null, true);
             echo "\" >
-  <div class=\"card-body p-5 bckcolprim \">
-<h5 class=\"card-title\">";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "getUserId", [], "method", false, false, false, 16), "getUsername", [], "method", false, false, false, 16), "html", null, true);
+                    <div class=\"card-body p-5 bckcolprim \">
+                        <h5 class=\"card-title fw-bold bckcolslightt\">";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "getUserId", [], "method", false, false, false, 23), "getUsername", [], "method", false, false, false, 23), "html", null, true);
             echo "</h5>
-    <p class=\"card-text\">";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 17), "html", null, true);
-            echo "</p>
-
-    <p class=\"card-text\"><small class=\"text-muted\">Publié le ";
-            // line 19
-            ((twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 19)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 19), "Y-m-d H:i"), "html", null, true))) : (print ("")));
-            echo "</small></p>
-\t<a href=\"";
-            // line 20
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_show", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 20)]), "html", null, true);
-            echo "\" class=\"btn btn-dark\" >Voir le post</a>
-                        ";
-            // line 21
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "getUserId", [], "method", false, false, false, 21), "id", [], "any", false, false, false, 21) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "id", [], "any", false, false, false, 21))) {
-                // line 22
-                echo "\t\t\t\t\t\t<a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 22)]), "html", null, true);
-                echo "\" class=\"btn btn-outline-dark ml-2\">Modifier</a>
-                        ";
-            }
+                        <p class=\"card-text\">";
             // line 24
-            echo "\t<hr class=\"mt-4\">
-    ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 24), "html", null, true);
+            echo "</p>
+                        <p class=\"card-text\"><small class=\"text-muted\">Publié le ";
+            // line 25
+            ((twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 25), "Y-m-d H:i"), "html", null, true))) : (print ("")));
+            echo "</small></p>
+                        <a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_show", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\" class=\"btn btn-dark\" >Voir le post</a>
+                            ";
+            // line 27
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "getUserId", [], "method", false, false, false, 27), "id", [], "any", false, false, false, 27) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27), "id", [], "any", false, false, false, 27))) {
+                // line 28
+                echo "                                <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+                echo "\" class=\"btn btn-outline-dark ml-2\">Modifier</a>
+                            ";
+            }
+            // line 30
+            echo "                                            
+                    </div>
+                </div>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
-        echo "</div>
+        // line 34
+        echo "    </div>
+    
+    
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -161,7 +172,7 @@ class __TwigTemplate_7d1ab633ec39468e7b32da9a2a9195e7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 26,  135 => 24,  129 => 22,  127 => 21,  123 => 20,  119 => 19,  114 => 17,  110 => 16,  103 => 14,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 34,  141 => 30,  135 => 28,  133 => 27,  129 => 26,  125 => 25,  121 => 24,  117 => 23,  110 => 21,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,27 +182,38 @@ class __TwigTemplate_7d1ab633ec39468e7b32da9a2a9195e7 extends Template
 {% block title %}Hello MyPostController!{% endblock %}
 
 {% block body %}
+\t<h1 class=\"col-md-12 text-center py-5\">Mes publications</h1>
+    <hr class=\" pb-5\">
+
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    {% for post in myPosts %}
-<div class=\"card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3\">
-  <img src=\"{{ vich_uploader_asset(post, 'imageFile') }}\" class=\"card-img-top\" alt=\"{{ post.imageName }}\" >
-  <div class=\"card-body p-5 bckcolprim \">
-<h5 class=\"card-title\">{{ post.getUserId().getUsername() }}</h5>
-    <p class=\"card-text\">{{ post.description }}</p>
 
-    <p class=\"card-text\"><small class=\"text-muted\">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
-\t<a href=\"{{ path('app_post_show', {'id': post.id}) }}\" class=\"btn btn-dark\" >Voir le post</a>
-                        {% if post.getUserId().id  == app.user.id %}
-\t\t\t\t\t\t<a href=\"{{ path('app_post_edit', {'id': post.id}) }}\" class=\"btn btn-outline-dark ml-2\">Modifier</a>
-                        {% endif %}
-\t<hr class=\"mt-4\">
-    {% endfor %}
-</div>
+   
+    <div class=\"container d-flex flex-wrap justify-content-around \">
+
+        {% for post in myPosts %}
+            <div class=\"card mb-3 col-md-5 shadow-lg mb-5 bg-body rounded-3\">
+            
+                <img src=\"{{ vich_uploader_asset(post, 'imageFile') }}\" class=\"card-img-top\" alt=\"{{ post.imageName }}\" >
+                    <div class=\"card-body p-5 bckcolprim \">
+                        <h5 class=\"card-title fw-bold bckcolslightt\">{{ post.getUserId().getUsername() }}</h5>
+                        <p class=\"card-text\">{{ post.description }}</p>
+                        <p class=\"card-text\"><small class=\"text-muted\">Publié le {{ post.createdAt ? post.createdAt|date('Y-m-d H:i') : '' }}</small></p>
+                        <a href=\"{{ path('app_post_show', {'id': post.id}) }}\" class=\"btn btn-dark\" >Voir le post</a>
+                            {% if post.getUserId().id  == app.user.id %}
+                                <a href=\"{{ path('app_post_edit', {'id': post.id}) }}\" class=\"btn btn-outline-dark ml-2\">Modifier</a>
+                            {% endif %}
+                                            
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+    
+    
+
 {% endblock %}
 ", "my_post/index.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\my_post\\index.html.twig");
     }

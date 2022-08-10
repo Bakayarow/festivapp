@@ -3,9 +3,9 @@
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1>Create new Post</h1>
+    <h1>Nouvelle publication</h1>
 
     {{ include('post/_form.html.twig') }}
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+    <a href="{{ path('app_post_index') }}" class="btn btn-dark">Revenir à l'accueil</a>
 {% endblock %}

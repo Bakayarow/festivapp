@@ -85,7 +85,7 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Post</h1>
+        echo "    <h1>Nouvelle publication</h1>
 
     ";
         // line 8
@@ -95,7 +95,7 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
     <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-dark\">Revenir à l'accueil</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -127,11 +127,11 @@ class __TwigTemplate_eda1adae3c5dd0ea80959374e0a796e2 extends Template
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1>Create new Post</h1>
+    <h1>Nouvelle publication</h1>
 
     {{ include('post/_form.html.twig') }}
 
-    <a href=\"{{ path('app_post_index') }}\">back to list</a>
+    <a href=\"{{ path('app_post_index') }}\" class=\"btn btn-dark\">Revenir à l'accueil</a>
 {% endblock %}
 ", "post/new.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\post\\new.html.twig");
     }

@@ -3,13 +3,18 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    
 
+<h1 class="col-md-12 text-center py-5">Créer un compte</h1>
+        <hr>
+    
+<div class="container d-flex justify-content-center pt-5">
 <div class="col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 ">
 
-<h1>Register</h1>
+
+    <h1 class="h3 mb-3 font-weight-normal">S'enregistrer</h1>
+
         <form method="post">
-    {{ form_start(registrationForm) }}
+            {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -18,4 +23,7 @@
 
         <button type="submit" class="btn btn-primary">Register</button>
     {{ form_end(registrationForm) }}
+
+    </div>
+    </div>
 {% endblock %}
