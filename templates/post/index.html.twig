@@ -8,7 +8,9 @@
 	
 	<hr>
 <div class="container d-flex flex-column justify-content-center align-items-center pt-5">
+{% if app.user %}
 <a href="{{ path('app_post_new')}}" class="btn btn-outline-dark p-3" >Nouvelle publication + </a>
+{% endif %}
 
 {% for post in posts %}
 <div class="card mb-3 col-md-6 my-5 shadow-lg mb-5 bg-body rounded-3">
