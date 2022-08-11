@@ -6,7 +6,7 @@
 
     <div class="container d-flex flex-column justify-content-center align-items-center pt-3">
 <div class="card mb-3 col-md-6 my-3 shadow-lg mb-5 bg-body rounded-3">
-  <img src="{{ vich_uploader_asset(post) }}" alt="{{ post.imageName }}" width="300" height="300">
+  <img src="{{ vich_uploader_asset(post) }}" alt="{{ post.imageName }}">
   <div class="card-body p-5 bckcolprim ">
 <h5 class="card-title fw-bold bckcolslightt">{{ post.getUserId().getUsername() }}</h5>
     <p class="card-text">{{ post.description }}</p>
