@@ -47,7 +47,7 @@ class __TwigTemplate_4f0c219b6e9a4a1f72dc6f1c1937913a extends Template
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["comment"]) || array_key_exists("comment", $context) ? $context["comment"] : (function () { throw new RuntimeError('Variable "comment" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-outline-danger\">Supprimer</button>
 </form>
 ";
         
@@ -77,7 +77,7 @@ class __TwigTemplate_4f0c219b6e9a4a1f72dc6f1c1937913a extends Template
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_comment_delete', {'id': comment.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ comment.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-outline-danger\">Supprimer</button>
 </form>
 ", "comment/_delete_form.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\comment\\_delete_form.html.twig");
     }

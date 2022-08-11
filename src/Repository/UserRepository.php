@@ -39,6 +39,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         if ($flush) {
             $this->getEntityManager()->flush();
+           
+            
         }
     }
 

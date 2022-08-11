@@ -70,11 +70,20 @@ class UserController extends AbstractController
     #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
+        if($user == null)
+        {
+            return $this->redirect($this->generateUrl('app_login'));
+        }
+      
+   
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user, true);
+            $request->getSession()->invalidate();
+            $this->container->get('security.token_storage')->setToken(null);
+            $this->addFlash('sup', 'Votre compte a bien été supprimée');
         }
 
-        return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_login');
     }
 
     

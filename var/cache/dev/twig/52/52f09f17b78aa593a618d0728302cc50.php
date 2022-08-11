@@ -65,7 +65,7 @@ class __TwigTemplate_149320c2b6ed0245c60cff9b48d586e4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Comment index";
+        echo "Comment delete";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,70 +85,22 @@ class __TwigTemplate_149320c2b6ed0245c60cff9b48d586e4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Comment index</h1>
+        echo "    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5 text-center\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"66\" height=\"66\" fill=\"currentColor\" class=\"bi bi-trash-fill text-danger m-5\" viewBox=\"0 0 16 16\">
+                    <path d=\"M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z\"/>
+                </svg>
+                <h1 class=\"h3 mb-3 font-weight-normal \">Commentaire supprimé !</h1>
+                <a href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_post_index");
+        echo "\" class=\"btn btn-outline-dark my-3\">
+                    Retour à l'accueil
+                </a>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 18
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 18, $this->source); })()));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 19
-            echo "            <tr>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            ((twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 21)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 21), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["comment"], "updatedAt", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "updatedAt", [], "any", false, false, false, 22), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>
-                    <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_show", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 29
-            echo "            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
-    </table>
 
-    <a href=\"";
-        // line 36
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_comment_new");
-        echo "\">Create new</a>
+        </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -170,47 +122,29 @@ class __TwigTemplate_149320c2b6ed0245c60cff9b48d586e4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Comment index{% endblock %}
+{% block title %}Comment delete{% endblock %}
 
 {% block body %}
-    <h1>Comment index</h1>
+    <div class=\"container d-flex justify-content-center pt-5\">
+        <div class=\"col-md-5 p-5 shadow-lg p-3 mb-5 bg-body rounded-5 mt-5 text-center\">
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"66\" height=\"66\" fill=\"currentColor\" class=\"bi bi-trash-fill text-danger m-5\" viewBox=\"0 0 16 16\">
+                    <path d=\"M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z\"/>
+                </svg>
+                <h1 class=\"h3 mb-3 font-weight-normal \">Commentaire supprimé !</h1>
+                <a href=\"{{ path('app_post_index')}}\" class=\"btn btn-outline-dark my-3\">
+                    Retour à l'accueil
+                </a>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for comment in comments %}
-            <tr>
-                <td>{{ comment.id }}</td>
-                <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href=\"{{ path('app_comment_show', {'id': comment.id}) }}\">show</a>
-                    <a href=\"{{ path('app_comment_edit', {'id': comment.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"4\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href=\"{{ path('app_comment_new') }}\">Create new</a>
+        </div>
+    </div>
 {% endblock %}
 ", "comment/index.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\comment\\index.html.twig");
     }

@@ -20,6 +20,7 @@ class Comment
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
+    #[ORM\JoinColumn(onDelete: "CASCADE")] 
     private ?User $user_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]

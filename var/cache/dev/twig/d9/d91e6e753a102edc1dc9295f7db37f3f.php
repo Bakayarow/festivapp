@@ -44,15 +44,16 @@ class __TwigTemplate_62b388071a7e7cd986ef8dc04c6761e2 extends Template
         echo "
     ";
         // line 2
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), "imageFile", [], "any", false, false, false, 2), 'row', ["attr" => ["width" => 300, "height" => 300]]);
+        // line 5
         echo "
     <button class=\"btn btn-outline-success my-3\">";
-        // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Publier")) : ("Publier")), "html", null, true);
+        // line 6
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 6, $this->source); })()), "Publier")) : ("Publier")), "html", null, true);
         echo "</button>
 ";
-        // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
+        // line 7
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -75,13 +76,16 @@ class __TwigTemplate_62b388071a7e7cd986ef8dc04c6761e2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  56 => 7,  52 => 6,  49 => 5,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.imageFile, {\"attr\": {
+        \"width\": 300,
+        \"height\": 300
+    }}) }}
     <button class=\"btn btn-outline-success my-3\">{{ button_label|default('Publier') }}</button>
 {{ form_end(form) }}
 ", "post/_form.html.twig", "C:\\xampp\\htdocs\\festivapp\\templates\\post\\_form.html.twig");
