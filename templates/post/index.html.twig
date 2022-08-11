@@ -26,13 +26,13 @@
                         {% endif %}
 	<hr class="mt-4">
 	<h4 >Poster un commentaire :</h4>
-	
+	{% if app.user %}
 			<form method="POST" action={{path('app_comment_new')}}>
 				<textarea name="comment" class="form-control my-2"></textarea>
 				<input hidden name="postId" value={{post.id}} />
 				<button class="btn btn-dark">{{ button_label|default('Publier') }}</button>
 			</form>
-
+	{% endif %}
 			<hr class="mt-4">
 
 			{% for comment in comments %}
