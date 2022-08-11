@@ -441,6 +441,7 @@ class ComposerStaticInit9e1f9ecfe0c5e63f85e8c96811931718
 
     public static $classMap = array (
         'App\\Controller\\CommentController' => __DIR__ . '/../..' . '/src/Controller/CommentController.php',
+        'App\\Controller\\MyPostController' => __DIR__ . '/../..' . '/src/Controller/MyPostController.php',
         'App\\Controller\\PostController' => __DIR__ . '/../..' . '/src/Controller/PostController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
