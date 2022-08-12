@@ -86,7 +86,7 @@ class __TwigTemplate_900325686dbb91f1ad92a4f95c6802c7 extends Template
 
         // line 6
         echo "<div class=\"container mt-4\"> 
-<h1 class=\"col-md-12 text-center py-5\">Se connecter</h1>
+<h1 class=\"col-md-12 text-center py-5 fw-bold\">Bienvenue sur Festiv'App !</h1>
 \t<hr>
     <div class=\"container d-flex justify-content-center pt-5\">
     
@@ -180,7 +180,7 @@ class __TwigTemplate_900325686dbb91f1ad92a4f95c6802c7 extends Template
 
 {% block body %}
 <div class=\"container mt-4\"> 
-<h1 class=\"col-md-12 text-center py-5\">Se connecter</h1>
+<h1 class=\"col-md-12 text-center py-5 fw-bold\">Bienvenue sur Festiv'App !</h1>
 \t<hr>
     <div class=\"container d-flex justify-content-center pt-5\">
     
